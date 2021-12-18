@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+    <!-- <% products.forEach(product => { %>
+        <p onclick="clickedProductName('<%= product %>')">  
+            <%= product.product_name %> </p>
+      <img src = <%= product.product_image %>>
+  <% })%> -->
+  <div class="container">
+    <div class="left_container">
+          
+    </div>
+       <div class="right_container">
+        <% products.forEach(product  => { %>
+            <div class="box" onclick="clickedProductName('<%= JSON.stringify(product) %>')">
+                <div class="inner_box">
+                <div class= "left_box">
+                    <div class="upper_left_box fx">
+                <img src = <%= product.product_image %>>
+                <p><%= product.product_name %>  </p>
+            </div>
+            <div class="lower_left_box">
+                <p> <%= product.risk %></p>
+                <div class="dot"></div>
+                <p> <%= product.category %></p>
+                <div class="dot"></div>
+                <div class= "fx" id="rating">
+                <p> <%= product.rating %></p>
+                <p class="fa fa-star star"></p>
+            </div>
+            </div>
+            </div>
+
+            <div class="right_box">
+             <div class="upper_right_box1">
+            <h3> <%= product.percentage_interval[0] %></h3>
+            <p>1D</p>
+             </div>
+            <div class="upper_right_box2">
+            <h3> <%= product.percentage_interval[1] %></h3>
+            <p>1M</p>
+        </div>
+ 
+            <div class="upper_right_box3">
+            <h3> <%= product.percentage_interval[2] %></h3>
+            <p>1Y</p>
+        </div>
+    </div>
+      </div>
+            </div>
+      <% })%>
+    </div>
+</div>
+</body>
+
+    <script>
+        function clickedProductName(product){
+            const newProduct = JSON.parse(product);
+            console.log(newProduct.price);
+            window.location.href = `http://localhost:2500/products/${newProduct._id}`
+        }
+    </script>
+       
+</body>
+</html>
