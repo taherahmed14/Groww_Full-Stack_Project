@@ -11,30 +11,46 @@ let calIcon = document.getElementById("calendarIcon");
 let sipInput = document.getElementById("sipAmountInput");
 let paymentNote = document.getElementById("paymentNote");
 
-function addToCart(){
-    let cartArr = JSON.parse(localStorage.getItem("groww_cart")); 
+async function addToCart(product_id){
     if(sipInput.value == "" || sipInput.value < 100 || sipInput.value > 50000){
         alert("Please enter minimum amount");
     }
     else{
-        let flag = true;
-        for(let i = 0; i < cartArr.length; i++){
-            if(cartArr[i].id == productArr[0].id){
-                flag = false;
-            }
-        }
-        if(flag){
-            productArr[0].price = sipInput.value;
-            cartArr.push(productArr[0]);
-            localStorage.setItem("groww_cart", JSON.stringify(cartArr));
-            console.log(cartArr);
-            alert("Product succesfully added to cart");
-        }
-        else{
-            alert("Product is already added to cart");
-        }
+        console.log(product_id);
+        let data = await fetch(`http://localhost:2500/products/cart/${product_id}`);
+        let dt = await data.json();
+        console.log(dt);
+        alert("product added to cart");
     }
 }
+
+// function addToCart(){
+//     // let cartArr = JSON.parse(localStorage.getItem("groww_cart")); 
+//     if(sipInput.value == "" || sipInput.value < 100 || sipInput.value > 50000){
+//         alert("Please enter minimum amount");
+//     }
+//     else{
+//         // let flag = true;
+//         // for(let i = 0; i < cartArr.length; i++){
+//         //     if(cartArr[i].id == productArr[0].id){
+//         //         flag = false;
+//         //     }
+//         // }
+//         // if(flag){
+//         //     productArr[0].price = sipInput.value;
+//         //     cartArr.push(productArr[0]);
+//         //     localStorage.setItem("groww_cart", JSON.stringify(cartArr));
+//         //     console.log(cartArr);
+//         //     alert("Product succesfully added to cart");
+//         // }
+//         // else{
+//         //     alert("Product is already added to cart");
+//         // }
+
+//         //Backend code to add the product to cart ***
+
+//     }
+// }
 
 function goToCart(){
     window.location.href = "groww_cart.html";
@@ -168,14 +184,4 @@ function calculate(prin, retrunPercent) {
         totalInvest.innerHTML = `Total investment of ₹${totalInvestment}`;
         interestReturn.innerHTML = `Would have become ₹${newReturn} (+${retrunPercent})`
     } 
-}
-
-
-//Backend code to add the product to cart ***
-async function addToCart(product_id){
-    console.log(product_id);
-    let data = await fetch(`http://localhost:2345/products/cart/${product_id}`);
-    let dt = await data.json();
-    console.log(dt);
-    alert("product added to cart");
 }

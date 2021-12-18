@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const connect = require('./configis/db');
+
 const productController = require('./controller/product.controller');
+const cartController = require('./controller/cart.controller');
 
 app.use(express.json());
 app.use(express.static('public'));
