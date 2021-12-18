@@ -1,7 +1,3 @@
-if (localStorage.getItem("groww_cart") == null) {
-    localStorage.setItem("groww_cart", JSON.stringify([]));
-}
-
 let monthlySip = document.getElementById("monthlySip");
 let oneTime = document.getElementById("oneTime"); 
 let inputLabel = document.getElementById("inputLabel");
@@ -16,44 +12,18 @@ async function addToCart(product_id){
         alert("Please enter minimum amount");
     }
     else{
-        console.log(product_id);
         let data = await fetch(`http://localhost:2500/products/cart/${product_id}`);
         let dt = await data.json();
-        console.log(dt);
-        alert("product added to cart");
+        let newProductId = dt.addtocart._id;
+        updateProduct(newProductId);
     }
 }
 
-// function addToCart(){
-//     // let cartArr = JSON.parse(localStorage.getItem("groww_cart")); 
-//     if(sipInput.value == "" || sipInput.value < 100 || sipInput.value > 50000){
-//         alert("Please enter minimum amount");
-//     }
-//     else{
-//         // let flag = true;
-//         // for(let i = 0; i < cartArr.length; i++){
-//         //     if(cartArr[i].id == productArr[0].id){
-//         //         flag = false;
-//         //     }
-//         // }
-//         // if(flag){
-//         //     productArr[0].price = sipInput.value;
-//         //     cartArr.push(productArr[0]);
-//         //     localStorage.setItem("groww_cart", JSON.stringify(cartArr));
-//         //     console.log(cartArr);
-//         //     alert("Product succesfully added to cart");
-//         // }
-//         // else{
-//         //     alert("Product is already added to cart");
-//         // }
-
-//         //Backend code to add the product to cart ***
-
-//     }
-// }
-
-function goToCart(){
-    window.location.href = "groww_cart.html";
+async function updateProduct(newProductId){
+    let product = await fetch(`http://localhost:2500/products/cart/${newProductId}/${sipInput.value}`);
+    let productDt = await product.json();
+    console.log(productDt);
+    alert("product added to cart");
 }
 
 function showMonthlySip(){

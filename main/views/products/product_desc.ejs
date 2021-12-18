@@ -12,7 +12,7 @@
     <link rel = "stylesheet" href="/css/product_description.css">
     <link rel = "stylesheet" href="/css/search_box.css"> 
 </head>
-<body>
+<body onload="getData('<%= product.symbol %>')">
 
     <nav class="max-w">
         <div class="nav-div">
@@ -314,13 +314,12 @@
                 </div>
                 <div id="sipCal">
                     <div id="dateLabel">Monthly SIP Date</div>
-                    <input type="date" id="sipCalInput" value="2021-11-15" data-date-format="YYYY MM DD" >
+                    <input type="date" id="sipCalInput" value="2021-11-15" data-date-format="YYYY MM DD" onchange="calendar()">
                 </div>
                 <div id="paymentNote">Next SIP Instalment on 15-12-2021</div>
             </div>
             <div class="addToCart">
                 <div id="addToCartBtn" onclick="addToCart('<%= product._id %>')">ADD TO CART</div>
-                <div id="goToCartBtn">GO TO CART</div>
             </div>
         </div>
 
@@ -462,29 +461,7 @@
 
 </html>
 
-<!-- <script type="module">
-
-    import { showDescription, addToCart, goToCart, showMonthlySip, showOneTime, calendar } from "/scripts/product_desc_scripts.js";
-    import { getData, appendingData, graph } from "/scripts/graph.js";
-    getData();
-
-    let addToCartBtn = document.getElementById("addToCartBtn");
-    let goToCartBtn = document.getElementById("goToCartBtn");
-    let calendarSel = document.getElementById("sipCalInput");
-
-    addToCartBtn.onclick = function(){
-        addToCart();
-    }
-    goToCartBtn.onclick = function(){
-        goToCart();
-    }
-    calendarSel.onchange = function(){
-        calendar();
-    }
-
-</script> -->
-
 <script src="/scripts/product_desc_scripts.js"></script>
-
+<script src="/scripts/graph.js"></script>
 <script src="/scripts/search_box.js"></script>
 <script src="/scripts/changeNavbar.js"></script>

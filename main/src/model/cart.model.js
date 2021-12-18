@@ -13,7 +13,7 @@ const cartSchema = new Schema({
     fund_size: { type: String, required: true },
     nav: { type: String, required: true },
     return_percentage: { type: String, required: true },
-    price: { type: String, required: true },
+    price: { type: Number, required: true },
     symbol: { type: String, required: true }
 },{
     versionKey: false,
