@@ -23,7 +23,7 @@ async function updateProduct(newProductId){
     let product = await fetch(`http://localhost:2500/products/cart/${newProductId}/${sipInput.value}`);
     let productDt = await product.json();
     console.log(productDt);
-    alert("product added to cart");
+    alert("Product Successfully added to cart");
 }
 
 function showMonthlySip(){

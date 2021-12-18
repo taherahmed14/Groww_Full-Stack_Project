@@ -58,12 +58,6 @@ router.get('/', async (req,res) => {
 
 });
 
-//get all products
-router.get('/showProducts', async (req,res) => {
-  const products = await Product.find({}).lean().exec();
-  res.send({ products });
-});
-
 //get single products by id
 router.get('/:id', async(req,res) => {
     // console.log(req.params.id);
@@ -74,6 +68,8 @@ router.get('/:id', async(req,res) => {
     })
 })
 
+
+// ------------------product description routes---------------------
 
 //Code to add products to cart after clicking add to cart button ***
 router.get("/cart/:id", async(req, res) => {
@@ -115,6 +111,30 @@ router.get("/cart/:id/:price", async(req, res) => {
     return res.status(500).json({
       message: e.message, 
       status: "Failed"
+    });
+  }
+});
+
+//get all products
+router.get('/showProducts/:inputValue', async (req,res) => {
+  try{
+    const products = await Product.find({}, {product_name: 1}).lean().exec();
+    let searchedProducts = [];
+    products.forEach(({ product_name, _id }) => {
+      let temp = "";
+      for(let i = 0; i < product_name.length; i++){
+        temp += product_name[i]
+        if(temp == req.params.inputValue || temp.toLowerCase() == req.params.inputValue){
+          searchedProducts.push({ product_name , _id});
+        }
+      }
+    });
+    return res.send({ searchedProducts });
+  }
+  catch(e){
+    return res.status(500).json({
+        message: e.message, 
+        status: "Failed"
     });
   }
 });

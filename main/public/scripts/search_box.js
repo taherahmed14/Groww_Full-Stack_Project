@@ -1,4 +1,3 @@
-
 let timerId;
 let dropdownBox = document.getElementById("dropDown");
 let searchInput = document.getElementById("search");
@@ -9,57 +8,20 @@ searchInput.oninput = () => {
 async function showData(){
     try{
         let inputValue = document.getElementById("search").value;
-        let data = await fetch("http://localhost:2500/products/showProducts");
+        let data = await fetch(`http://localhost:2500/products/showProducts/${inputValue}`);
+        console.log(data);
         let dt = await data.json();
-        console.log(dt);
-        let productArr = [];
-        dt.forEach((data) => {
-            let temp = "";
-            for(let i = 0; i < data.product_name.length; i++){
-                temp += data.product_name[i];
-                let tempLower = temp.toLowerCase();
-                if(inputValue == temp || inputValue == tempLower){
-                    console.log(data.product_name);
-                    productArr.push(data);
-                }
-            }
-            dropDown(productArr);
-        });
+        console.log(dt.searchedProducts);
+        dropDown(dt.searchedProducts);
+        
     }
     catch(err){
         console.log(err);
     }
 }
 
-function showData(){
-    let inputValue = document.getElementById("search").value;
-    fetch("http://localhost:2500/products/showProducts")
-    .then((res) => {
-        return res.json();
-    })
-    .then((res) => {
-        console.log("For Search: ", res);
-        let productArr = [];
-        res.forEach(function(data){
-            let temp = "";
-            for(let i = 0; i < data.product_name.length; i++){
-                temp += data.product_name[i];
-                let tempLower = temp.toLowerCase();
-                if(inputValue == temp || inputValue == tempLower){
-                    console.log(data.product_name);
-                    productArr.push(data);
-                }
-            }
-            dropDown(productArr);
-        });
-
-    })
-    .catch((err) => {
-        console.log(err);
-    })
-}
-
 function dropDown(product){
+    console.log(product);
     dropdownBox.innerHTML = null;
     dropdownBox.setAttribute("class", "dropDown");
     product.forEach((el) => {
@@ -78,13 +40,11 @@ function dropDown(product){
     });
 }
 
-let productArr = JSON.parse(localStorage.getItem("itemData"));
-
-function goToProduct(el){
-    productArr[0] = el;
-    localStorage.setItem("itemData", JSON.stringify(productArr));
-    console.log(productArr);
-    window.location.href = "groww_product_description.html";
+function goToProduct(product) {
+    console.log(product._id);
+    // const newProduct = JSON.parse(product);
+    // console.log(newProduct.price);
+    window.location.href = `http://localhost:2500/products/${product._id}`
 }
 
 function deBounce(func, delay){
