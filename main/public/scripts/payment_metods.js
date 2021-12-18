@@ -80,10 +80,10 @@ function paymentMethod(e) {
                 let data = await fetch(`http://localhost:2500/payment/${upiValue}/${"Net_Banking"}`);
                 let dt = await data.json();
                 console.log(dt);
-                alert("Paid");
+                // alert("Paid");
             }
             sendData();
-            // window.location.href = "groww_successPage.html";
+            window.location.href = "http://localhost:2500/netbanking";
         }
         else{
             alert('Enter a valid net banking username')

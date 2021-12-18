@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Confirmation</title>
+    <link rel="stylesheet" href="/css/style-sec.css">
+</head>
+
+<body>
+    <div>
+
+        <div id="pinPage" class="bg-black flex-div">
+
+            <div class="logo">
+                <div class="logo-pic">
+                    <div class="flex-div curs-or pos-relative" itemscope="true" itemtype="http://schema.org/Brand"
+                        style="min-width: 150px;min-height: 79px;"><img class=""
+                            src="//assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/logo-light-groww.1815ad63.svg"
+                            width="150" height="50" alt="Groww Logo" itemprop="logo"></div>
+                </div>
+            </div>
+
+            <div class="flex-div otp-input">
+                <div style="margin:0;">
+                    <div class="input-box">
+                        <div class="row">
+                            <div class="flex-div main-inp-div">
+                                <div class="lock-img"><img class="tfasp629SecureImgIcon"
+                                        src="//assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/secure-icon.4745071e.svg"
+                                        alt="Secure Icon"></div>
+                                <div class="secure-text">
+                                    <div class="text-onee">Enter Secure OTP</div>
+                                    <div class="text-twoo">We value security. Feel free to keep your investments safe &
+                                        secure.</div>
+                                </div>
+
+                                <!-- pin input -->
+
+                                <!--  <div class="pin-inp-area">
+                                    <div id="inp-parent">
+                                        <div class="otp-inp">
+                                            <input type="number" autocomplete="new-password" class="otpinput88"
+                                                maxlength="1" pattern="\d*" autofocus="true">
+                                        </div>
+
+                                        <div class="otp-inp">
+                                            <input type="number" autocomplete="new-password" class="otpinput88"
+                                                maxlength="1" pattern="\d*" autofocus="true">
+                                        </div>
+
+                                        <div class="otp-inp">
+                                            <input type="number" autocomplete="new-password" class="otpinput88"
+                                                maxlength="1" pattern="\d*" autofocus="true">
+                                        </div>
+
+                                        <div class="otp-inp">
+                                            <input type="number" autocomplete="new-password" class="otpinput88"
+                                                maxlength="1" pattern="\d*" autofocus="true">
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="contact ">
+                                    <!-- {{msg}} -->
+                                    <div class="f-1">
+                                        <form method="POST" action="verify">
+                                            <p>
+                                                <input type="text" name="otp" class = "otp_input" required>
+                                            </p>
+
+                                            <p class="full">
+                                                <button type="submit">Submit</button>
+                                            </p>
+
+                                        </form>
+                                    </div>
+
+                                    <div class="f2">
+                                        <form method="POST" action="resend">
+                                            <p class="full">
+                                                <button type="submit">Resend OTP</button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!--  -->
+                                <div class="pinText">
+                                    {{msg}}
+                                </div>
+                                <!--  -->
+
+                                <!-- submit-button -->
+                                <!--  <div class="submit-btn">
+
+                                    <div class="btn51RipplePrimary btnPrimary" style="width: 200px; height: 40px;">
+                                        <div class="absolute-center btnDimension"><span class="absolute-center"
+                                                style="padding: 0px 25px;"><span>SET PIN</span></span></div>
+                                    </div>
+
+                                </div> -->
+
+                                <!-- email-display -->
+                                <!--                                 <div class="email-div">
+
+                                    <div class="email-disp" style="margin-right: 10px;">praj4936@gmail.com </div>
+
+                                    <div title="Click if you want to logout and start over" class="click-Logout ">Logout
+                                    
+                                    </div>
+
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
