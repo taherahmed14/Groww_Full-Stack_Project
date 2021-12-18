@@ -1,5 +1,6 @@
 const express = require('express');
 const Product = require('../model/product.model');
+const Cart = require("../model/cart.model");
 
 const mongoose = require('mongoose');
 
@@ -64,8 +65,6 @@ router.get('/showProducts', async (req,res) => {
 });
 
 //get single products by id
-
-
 router.get('/:id', async(req,res) => {
     // console.log(req.params.id);
     const product = await Product.findOne({_id : req.params.id}).lean().exec();
