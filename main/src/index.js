@@ -23,15 +23,6 @@ app.use("/payment", paymentController);
 const bodyparser = require("body-parser");
 const nodemailer = require("nodemailer");
 const path = require("path");
-const exphbs = require("express-handlebars");
-
-// view engine setup
-
-// app.engine(
-//   "handlebars",
-//   exphbs({ extname: "hbs", defaultLayout: false, layoutsDir: "views/ " })
-// );
-// app.set("view engine", "handlebars");
 
 // body parser middleware
 app.use(bodyparser.urlencoded({ extended: false }));
@@ -44,7 +35,6 @@ app.get("/netbanking", function (req, res) {
   res.render("OTP/netbanking");
 });
 
-// const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 
 const CLIENT_ID =
