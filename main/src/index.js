@@ -90,9 +90,7 @@ app.post("/send", function (req, res) {
         from: "Groww-Team <praj4936@gmail.com>",
         to: `${email}`,
         subject: "Groww Payment: ",
-        html:`<img src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/logo-light-groww.1815ad63.svg"
-                            width="150" height="50" alt="Groww Logo" >
-                ` +
+        html:
           "<h3>OTP for Payment Confirmation is </h3>" +
           "<h1 style='font-weight:bold;'>" +
           otp +
