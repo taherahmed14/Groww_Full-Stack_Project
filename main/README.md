@@ -39,11 +39,10 @@ Want to run in your local Machine? Great!
 
 To run, follow these steps:
 
-- Clone my repository `https://github.com/taherahmed14/Groww-Clone`
-- Open that code in your VS code `Front end/groww_home.html`
-- Open the `groww_home.html` on Live server
-- Initialise the server `node server.js` on terminal
-- Then you can Navigate through other pages from Home page like `groww_products.html`, `groww_product_description.html` etc
+- Clone my repository `https://github.com/taherahmed14/Groww_Project`
+- Open that code in your VS code
+- Initialise the server `npm run server` on terminal
+- Then you can Navigate through other pages from Home pages
 
 
 ## Built with 
@@ -51,16 +50,18 @@ To run, follow these steps:
 - HTML
 - CSS
 - Advance JavaScript (ES6)
-- DOM
-- Basics of node js
+- node js
+- Express js
+- MongoDb
+- npm Packages
 - Chart.js
 
 ## Creators
 
 - [@Taher Ahmed](https://github.com/taherahmed14)
-- [@Akshay Kumar](https://github.com/AkshaykumarG26)
 - [@Pankaj Raj](https://github.com/Ipankaj07)
-- [@Shubham Bharti](https://github.com/Shubham007-tech)
 - [@Avinash](https://github.com/abhi103767)
-- [@Saurabh Verma](https://github.com/akasaurabhverma)
+- [@Akshay Kumar](https://github.com/AkshaykumarG26)
+
+
 
