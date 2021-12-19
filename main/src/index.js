@@ -7,6 +7,8 @@ const homeController = require('./controller/home.controller');
 const productController = require('./controller/product.controller');
 const cartController = require('./controller/cart.controller');
 const paymentController = require('./controller/payment.controller');
+const loginController = require('./controller/login.controller');
+const signupController = require('./controller/signup.controller');
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -16,6 +18,8 @@ app.use('/home',homeController);
 app.use('/products', productController);
 app.use("/cart", cartController);
 app.use("/payment", paymentController);
+app.use("/login", loginController);
+app.use("/signup", signupController);
 
 
 /*  OTP Section */
@@ -62,7 +66,7 @@ console.log(otp2);
 app.post("/send", function (req, res) {
 
   // console.log("body", req.body)
-  email = "ipankaj7488@gmail.com";
+  email = "ipankaj74882@gmail.com";
   // email = req.body.email;
   console.log("input Email: ", email);
 
