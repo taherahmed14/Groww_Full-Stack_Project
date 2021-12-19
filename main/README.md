@@ -62,6 +62,8 @@ To run, follow these steps:
 - [@Pankaj Raj](https://github.com/Ipankaj07)
 - [@Avinash](https://github.com/abhi103767)
 - [@Akshay Kumar](https://github.com/AkshaykumarG26)
+- [@Mayank Prajapati](https://github.com/Mayankpraja123)
+- [@Amar Jyoti Patra](https://github.com/amarjyotipatra)
 
 
 
