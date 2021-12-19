@@ -792,14 +792,14 @@
             if (newArr.length == 0) {
             }
             for (let i = 0; i < nayaarr.length; i++) {
-                if (nayaarr[i] < 10) {
+                if ( nayaarr[i] >= 2&& nayaarr[i] <= 11) {
                     amc += inputs[nayaarr[i]].value + ",";
                 }
 
-                else if (nayaarr[i] >= 10 && nayaarr[i] < 13) {
+                else if (nayaarr[i] >= 12 && nayaarr[i] <= 16) {
                     cat += inputs[nayaarr[i]].value + ',';
                 }
-                else if (nayaarr[i] >= 13 && nayaarr[i] < 16) {
+                else if (nayaarr[i] >= 17 && nayaarr[i] <= 24) {
                     risk += inputs[nayaarr[i]].value + ',';
                 }
                 else {
@@ -874,6 +874,8 @@
             nayaarr = [];
             localStorage.setItem('indexes', JSON.stringify(nayaarr));
             localStorage.setItem('filter', JSON.stringify(newArr));
+
+
             window.location.href = 'http://localhost:2500/products?'
         }
 

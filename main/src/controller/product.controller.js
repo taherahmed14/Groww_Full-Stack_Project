@@ -9,54 +9,96 @@ const router = express.Router();
 //get all products
 let arr = [];   
 router.get('/', async (req,res) => {
-     let research = '';
-     let category = '';
-     console.log(req.query.cat);
-    if ( req.query.amc === undefined || req.query.amc === ''){
-        research = '';
+    
+     
+
+      let cat =   req.query.cat ;
+      let amc =    req.query.amc ;
+      let fund =  req.query.fund;
+      let risk =   req.query.risk;
+      let products = [];
+      let arr= [amc,cat,risk,fund];
+      
+      let ans = [];
+      let name_of_filter = ["amc","category","risk","fund_size"];
+      let name = [];
+      console.log(arr);
+      for ( let i = 0; i < arr.length; i++){
+          if ( arr[i] != '' && arr[i] != undefined) 
+          {
+              ans.push(arr[i]);
+              name.push(name_of_filter[i]);
+
+          }
+
+      }
+      console.log(ans)
+      console.log(name);
+    //   console.log(req.query.cat )
+    //   console.log( req.query.amc)
+    //   console.log(req.query.fund)
+    //   console.log( req.query.risk)
+ if (ans.length === 0){
+     products = await Product.find({}).lean().exec();
+ }
+       
+       if ( ans.length == 1){
+           let name1 = name[0];
+           let arr = ans[0].trim().split(',');
+           //console.log(name1)
+           let query =  {
+           }
+          query[name1] = arr;
+        console.log(query)
+           products = await Product.find(query).lean().exec();
+          // console.log(products);
+       } 
+
+    else if ( ans.length == 2){
+
+           //console.log(name1)
+           let obj1 =  {
+           }
+           let obj2 = {};
+
+          obj1[name[0]] =ans[0].trim().split(',');
+          obj2[name[1]] = ans[1].trim().split(',');
+        
+        console.log(obj1,obj2);
+           products = await Product.find({$and : [obj1,obj2]}).lean().exec();
+
     }
-    else { 
-         research = req.query.amc.trim().split(','); 
-    }
-    if ( req.query.cat === undefined || req.query.cat === ''){
-        category = '';
-    }
-    else { 
-         category = req.query.cat.trim().split(','); 
-         category.pop();
-    }
+    else if ( ans.length == 3){
+
+        //console.log(name1)
+        let obj1 =  {
+        }
+        let obj2 = {};
+        let obj3 = {};
+
+       obj1[name[0]] =ans[0].trim().split(',');
+       obj2[name[1]] = ans[1].trim().split(',');
+       obj3[name[2]] = ans[2].trim().split(',');
+
+
+    
+     
+     console.log(obj1,obj2);
+        products = await Product.find({$and : [obj1,obj2,obj3]}).lean().exec();
+
+ }
+
+    
     
 
+  
 
-    console.log(research);
-    console.log(category);
-    let products = [];
-
-    if ( research === ''){
-        const products = await Product.find({}).lean().exec();
         res.render('products/products.ejs', {
             products,
         });
 
     }
-    else {
-        
-            products = await Product.find({$or: [{ amc : {$in : research} },  { category : {$in : category} }]}).lean().exec();
-            
-        }
-        console.log(products.length);
-        
-        res.render('products/products.ejs', {
-            products,
-        });
-   
-  // console.log(products.length);
-    // console.log(products);
-    // res.render('products/all.ejs', {
-    //     products,
-    // });
-
-});
+);
 
 //get single products by id
 router.get('/:id', async(req,res) => {
