@@ -219,36 +219,33 @@ input {
   box-shadow: 0 0 0 1000px #fff inset;
   letter-spacing: 35px;
   font-size: 22px;
-    width: 200px;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
+  width: 200px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-button{
-    background: #00d09c;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    white-space: nowrap;
-    position: relative;
-    background-position: 50%;
-    transition: background 0.8s;
-    border: none;
-    width: 40%;
-    height: 40px;
-    font-size: 16px;
-}
-
-.text-three{
+button {
+  background: #00d09c;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  background-position: 50%;
+  transition: background 0.8s;
+  border: none;
+  width: 40%;
+  height: 40px;
   font-size: 16px;
 }
 
-/* #preloader{
-  background-color: #fff url(https://c.tenor.com/OmURBTqVs48AAAAC/preloader.gif) no-repeat center;
-  background-size: 30%;
-  height: 100vh;
-  width:100%;
-  position: fixed;
-  z-index: 100;
-} */
+.text-three {
+  font-size: 16px;
+}
+
+input[type="radio"] {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
+  transform: scale(1.2);
+}
