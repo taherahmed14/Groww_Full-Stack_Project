@@ -40,9 +40,10 @@ Want to run in your local Machine? Great!
 To run, follow these steps:
 
 - Clone my repository `https://github.com/taherahmed14/Groww_Project`
-- Open that code in your VS code
+- Open the code in your VS code
 - Initialise the server `npm run server` on terminal
-- Then you can Navigate through other pages from Home pages
+- Run port 2500 on the browser `http://localhost:2500/home`
+- Then you can Navigate through other pages from Home page
 
 
 ## Built with 
