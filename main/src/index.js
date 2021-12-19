@@ -26,11 +26,12 @@ const path = require("path");
 const exphbs = require("express-handlebars");
 
 // view engine setup
-app.engine(
-  "handlebars",
-  exphbs({ extname: "hbs", defaultLayout: false, layoutsDir: "views/ " })
-);
-app.set("view engine", "handlebars");
+
+// app.engine(
+//   "handlebars",
+//   exphbs({ extname: "hbs", defaultLayout: false, layoutsDir: "views/ " })
+// );
+// app.set("view engine", "handlebars");
 
 // body parser middleware
 app.use(bodyparser.urlencoded({ extended: false }));
