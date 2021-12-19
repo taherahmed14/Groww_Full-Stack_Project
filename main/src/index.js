@@ -62,7 +62,7 @@ console.log(otp2);
 app.post("/send", function (req, res) {
 
   // console.log("body", req.body)
-  email = "ipankaj7488@gmail.com";
+  email = "sjtaherahmed@gmail.com";
   // email = req.body.email;
   console.log("input Email: ", email);
 
