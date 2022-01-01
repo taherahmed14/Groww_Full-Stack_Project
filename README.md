@@ -41,7 +41,7 @@ To run, follow these steps:
 
 - Clone my repository `https://github.com/taherahmed14/Groww_Project`
 - Open the code in your VS code
-- Initialise the server `npm run server` on terminal
+- Initialize the server `npm run server` on terminal
 - Run port 2500 on the browser `http://localhost:2500/home`
 - Then you can Navigate through other pages from Home page
 
