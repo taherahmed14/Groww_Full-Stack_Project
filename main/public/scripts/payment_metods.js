@@ -1,5 +1,5 @@
 async function updateTotalPrice(cart){
-    let data = await fetch(`http://localhost:2500/payment/price`);
+    let data = await fetch(`http://localhost:7500/payment/price`);
     let totalPrice = await data.json();
     console.log(totalPrice.sum);
     let totalDiv = document.getElementById('total_amount');
@@ -60,13 +60,13 @@ function paymentMethod(e) {
             async function sendData(){
                 let upiValue = e.target.vpa.value;
                 console.log(upiValue);
-                let data = await fetch(`http://localhost:2500/payment/${upiValue}/${"UPI"}`);
+                let data = await fetch(`http://localhost:7500/payment/${upiValue}/${"UPI"}`);
                 let dt = await data.json();
                 console.log(dt);
                 alert("Paid");
             }
             sendData();
-            window.location.href = "http://localhost:2500/netbanking";
+            window.location.href = "http://localhost:7500/netbanking";
         }
         else{
             alert("Enter a valid UPI Id");
@@ -77,13 +77,13 @@ function paymentMethod(e) {
             async function sendData(){
                 let upiValue = e.target.username.value;
                 console.log(upiValue);
-                let data = await fetch(`http://localhost:2500/payment/${upiValue}/${"Net_Banking"}`);
+                let data = await fetch(`http://localhost:7500/payment/${upiValue}/${"Net_Banking"}`);
                 let dt = await data.json();
                 console.log(dt);
                 // alert("Paid");
             }
             sendData();
-            window.location.href = "http://localhost:2500/netbanking";
+            window.location.href = "http://localhost:7500/netbanking";
         }
         else{
             alert('Enter a valid net banking username')
@@ -94,13 +94,13 @@ function paymentMethod(e) {
             async function sendData(){
                 let upiValue = e.target.creditCardNumber.value;
                 console.log(upiValue);
-                let data = await fetch(`http://localhost:2500/payment/${upiValue}/${"Credit_card"}`);
+                let data = await fetch(`http://localhost:7500/payment/${upiValue}/${"Credit_card"}`);
                 let dt = await data.json();
                 console.log(dt);
                 alert("Paid");
             }
             sendData();
-            window.location.href = "http://localhost:2500/netbanking";
+            window.location.href = "http://localhost:7500/netbanking";
         }
         else{
             alert('Enter a valid credit card number');

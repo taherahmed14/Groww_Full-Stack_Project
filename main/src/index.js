@@ -14,6 +14,8 @@ app.use(express.json());
 app.use(express.static('public'));
 app.set('view engine','ejs');
 
+const port = process.env.port || 7500;
+
 app.use('/home',homeController);
 app.use('/products', productController);
 app.use("/cart", cartController);
@@ -167,7 +169,7 @@ app.post("/resend", function (req, res) {
     .catch((error) => console.log(error.message));
 });
 
-app.listen('2500' , async () => {
+app.listen(port , async () => {
     await connect();
-  console.log("We are listening 2500");
+  console.log("We are listening 7500");
 })

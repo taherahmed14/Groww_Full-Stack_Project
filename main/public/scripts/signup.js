@@ -44,7 +44,7 @@ function signUp(e){
         if(!exist){
             arr.push(user)
             localStorage.setItem('users', JSON.stringify(arr));
-            window.location.href = ".http://localhost:2500/login"
+            window.location.href = ".http://localhost:7500/login"
             
         }else{
                 signup_form.addEventListener("submit", e => {

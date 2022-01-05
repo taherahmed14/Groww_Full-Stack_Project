@@ -27,10 +27,10 @@
             </div>
 
             <div id="thirdBox">
-                <a href="http://localhost:2500/signup"><button id="login-btn">Login/Register</button></a></li>
+                <a href="http://localhost:7500/signup"><button id="login-btn">Login/Register</button></a></li>
                 <div id="userAcc" class="dontDisplay">
                     <img id="user" src="https://www.shareicon.net/data/2016/05/26/771188_man_512x512.png">
-                    <a href="http://localhost:2500/cart"><i class="material-icons">shopping_cart</i></a></li>
+                    <a href="http://localhost:7500/cart"><i class="material-icons">shopping_cart</i></a></li>
                 </div>
             </div>
         </div>
@@ -767,7 +767,7 @@
         function clickedProductName(product) {
             const newProduct = JSON.parse(product);
             console.log(newProduct.price);
-            window.location.href = `http://localhost:2500/products/${newProduct._id}`
+            window.location.href = `http://localhost:7500/products/${newProduct._id}`
         }
 
         let checks = document.getElementsByClassName('checkbox');
@@ -812,7 +812,7 @@
                 inputs[nayaarr[i]].checked = true;
             }
             console.log(amc);
-            let url = 'http://localhost:2500/products?' + amc + '&' + cat + '&' + risk + '&' + fund;
+            let url = 'http://localhost:7500/products?' + amc + '&' + cat + '&' + risk + '&' + fund;
             console.log(url)
 
             return url;
@@ -876,7 +876,7 @@
             localStorage.setItem('filter', JSON.stringify(newArr));
 
 
-            window.location.href = 'http://localhost:2500/products?'
+            window.location.href = 'http://localhost:7500/products?'
         }
 
     </script>

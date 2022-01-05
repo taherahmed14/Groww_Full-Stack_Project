@@ -8,7 +8,7 @@ searchInput.oninput = () => {
 async function showData(){
     try{
         let inputValue = document.getElementById("search").value;
-        let data = await fetch(`http://localhost:2500/products/showProducts/${inputValue}`);
+        let data = await fetch(`http://localhost:7500/products/showProducts/${inputValue}`);
         console.log(data);
         let dt = await data.json();
         console.log(dt.searchedProducts);
@@ -44,7 +44,7 @@ function goToProduct(product) {
     console.log(product._id);
     // const newProduct = JSON.parse(product);
     // console.log(newProduct.price);
-    window.location.href = `http://localhost:2500/products/${product._id}`
+    window.location.href = `http://localhost:7500/products/${product._id}`
 }
 
 function deBounce(func, delay){

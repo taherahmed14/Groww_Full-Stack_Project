@@ -30,7 +30,7 @@ function logIn(e){
                 let check = JSON.parse(localStorage.getItem('check_Login'));
                 check[0] = {status: "Logged In"};
                 localStorage.setItem('check_Login', JSON.stringify(check));
-                window.location.href = "http://localhost:2500/home"
+                window.location.href = "http://localhost:7500/home"
             }else{
                 login_form.addEventListener("submit", e => {
                     e.preventDefault()
