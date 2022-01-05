@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.static('public'));
 app.set('view engine','ejs');
 
-const port = process.env.port || 7500;
+const port = process.env.PORT || 7500;
 
 app.use('/home',homeController);
 app.use('/products', productController);
