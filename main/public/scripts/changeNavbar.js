@@ -1,5 +1,6 @@
-let check = JSON.parse(localStorage.getItem('check_Login'));
+// let check = JSON.parse(localStorage.getItem('check_Login'));
 // console.log(check[0].status);
+let check = 1;
 
 if(check.length > 0){
     let loginBtn = document.getElementById("login-btn");

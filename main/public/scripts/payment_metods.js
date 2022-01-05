@@ -66,7 +66,7 @@ function paymentMethod(e) {
                 alert("Paid");
             }
             sendData();
-            window.location.href = "http://localhost:7500/netbanking";
+            window.location.href = "netbanking";
         }
         else{
             alert("Enter a valid UPI Id");
@@ -83,7 +83,7 @@ function paymentMethod(e) {
                 // alert("Paid");
             }
             sendData();
-            window.location.href = "http://localhost:7500/netbanking";
+            window.location.href = "netbanking";
         }
         else{
             alert('Enter a valid net banking username')
@@ -100,7 +100,7 @@ function paymentMethod(e) {
                 alert("Paid");
             }
             sendData();
-            window.location.href = "http://localhost:7500/netbanking";
+            window.location.href = "netbanking";
         }
         else{
             alert('Enter a valid credit card number');

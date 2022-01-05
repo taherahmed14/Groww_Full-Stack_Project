@@ -12,7 +12,7 @@ async function addToCart(product_id){
         alert("Please enter minimum amount");
     }
     else{
-        let data = await fetch(`http://localhost:7500/products/cart/${product_id}`);
+        let data = await fetch(`cart/${product_id}`);
         let dt = await data.json();
         let newProductId = dt.addtocart._id;
         updateProduct(newProductId);
@@ -20,7 +20,7 @@ async function addToCart(product_id){
 }
 
 async function updateProduct(newProductId){
-    let product = await fetch(`http://localhost:7500/products/cart/${newProductId}/${sipInput.value}`);
+    let product = await fetch(`cart/${newProductId}/${sipInput.value}`);
     let productDt = await product.json();
     console.log(productDt);
     alert("Product Successfully added to cart");
