@@ -87,12 +87,6 @@ router.get('/', async (req,res) => {
         products = await Product.find({$and : [obj1,obj2,obj3]}).lean().exec();
 
  }
-
-    
-    
-
-  
-
         res.render('products/products.ejs', {
             products,
         });

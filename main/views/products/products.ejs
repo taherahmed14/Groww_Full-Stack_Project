@@ -767,6 +767,7 @@
         function clickedProductName(product) {
             const newProduct = JSON.parse(product);
             console.log(newProduct.price);
+            console.log(newProduct);
             window.location.href = `products/${newProduct._id}`
         }
 

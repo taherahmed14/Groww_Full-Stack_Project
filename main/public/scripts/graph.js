@@ -7,7 +7,8 @@ let oneMonthGraph = document.getElementById("graphOneMonth");
 
 async function getData(productSymbol){
     console.log(productSymbol);
-    let dt = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${productSymbol}&apikey=0PTMBKNK94C4NSG5`)
+    // let dt = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${productSymbol}&apikey=0PTMBKNK94C4NSG5`)
+    let dt = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${productSymbol}&outputsize=full&apikey=apikey=7CBY0U4EFMVAZLRC`)
     let data =  await dt.json();
     console.log(data["Time Series (Daily)"]);
     appendingData(data["Time Series (Daily)"]);

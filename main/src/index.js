@@ -45,7 +45,7 @@ const { google } = require("googleapis");
 
 const CLIENT_ID =
   "388158439783-5jgictu6ekt7iotstsp68cartt0mjuf8.apps.googleusercontent.com";
-const CLEINT_SECRET = "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";
+const CLEINT_SECRET = "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";
 const REDIRECT_URI = "https://developers.google.com/oauthplayground";
 const REFRESH_TOKEN =
   "1//045tjWzHXVTduCgYIARAAGAQSNwF-L9IrSrIGfJSN88Ngz3JxblIfR4C_oYli6uMG12ZoqEKPJ5dZchCJROMbgXoSrG70spS5xrs";
@@ -80,7 +80,7 @@ app.post("/send", function (req, res) {
         service: "gmail",
         auth: {
           type: "OAuth2",
-          user: "praj4936@gmail.com",
+          user: "praj4936@gmail.com", //check
           clientId: CLIENT_ID,
           clientSecret: CLEINT_SECRET,
           refreshToken: REFRESH_TOKEN,
@@ -126,7 +126,7 @@ app.post("/verify", function (req, res) {
 
 app.post("/resend", function (req, res) {
   // email = req.body.email;
-  email = "ipankaj7488@gmail.com";
+  // email = "ipankaj7488@gmail.com";
   // console.log(email);
 
   async function sendMail1() {

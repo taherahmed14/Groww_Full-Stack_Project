@@ -1,5 +1,5 @@
 async function deleteProduct(product_id){
-    let data = await fetch(`http://localhost:7500/cart/${product_id}`);
+    let data = await fetch(`cart/${product_id}`);
     let dt = await data.json();
     alert("Product deleted successfully");
     location.reload();
