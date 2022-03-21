@@ -12,36 +12,23 @@ All the services are enabled to the users through its mobile and web application
 
 ## Groww Clone
 
-### Register Page
-![](https://github.com/taherahmed14/nordstrom-clone/blob/master/Project%20Screenshots/Register.png)
-
-### Log in Page
-![](https://github.com/taherahmed14/nordstrom-clone/blob/master/Project%20Screenshots/Login.png)
+### Sign up Page
+![](https://github.com/taherahmed14/Groww-Clone/blob/main/Groww%20Clone%20Screenshots/Groww%20Signup.png)
 
 ### Home Page
-![](https://github.com/taherahmed14/nordstrom-clone/blob/master/Project%20Screenshots/Home-1.png)
-
-### Navbar
-![](https://github.com/taherahmed14/nordstrom-clone/blob/master/Project%20Screenshots/Home-2.png)
+![](https://github.com/taherahmed14/Groww-Clone/blob/main/Groww%20Clone%20Screenshots/Groww%20Home%20Page.png)
 
 ### Product Page
-![](https://github.com/taherahmed14/nordstrom-clone/blob/master/Project%20Screenshots/Products.png)
+![](https://github.com/taherahmed14/Groww-Clone/blob/main/Groww%20Clone%20Screenshots/Groww%20Product%20Page.png)
 
 ### Product Description Page
-![](https://github.com/taherahmed14/nordstrom-clone/blob/master/Project%20Screenshots/Details.png)
-
-### Cart Page
-![](https://github.com/taherahmed14/nordstrom-clone/blob/master/Project%20Screenshots/Cart.png)
+![](https://github.com/taherahmed14/Groww-Clone/blob/main/Groww%20Clone%20Screenshots/Groww%20Product%20Description.png)
 
 ### Checkout Page
-![](https://github.com/taherahmed14/nordstrom-clone/blob/master/Project%20Screenshots/Checkout.png)
+![](https://github.com/taherahmed14/Groww-Clone/blob/main/Groww%20Clone%20Screenshots/Groww%20Cart%20Page.png)
 
 ### Payment Page
-![](https://github.com/taherahmed14/nordstrom-clone/blob/master/Project%20Screenshots/Payment.png)
-
-### OTP Page
-![](https://github.com/taherahmed14/nordstrom-clone/blob/master/Project%20Screenshots/OTP.png)
-
+![](https://github.com/taherahmed14/Groww-Clone/blob/main/Groww%20Clone%20Screenshots/Groww%20Payment%20Page.png)
 
 
 ## [Getting Started]
